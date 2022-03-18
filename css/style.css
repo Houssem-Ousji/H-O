@@ -1,0 +1,125 @@
+/* start general */
+header nav,header .content{
+    padding-top: var(--generalPadding) ;
+    padding-bottom: var(--generalPadding);
+}
+/* end general */
+/* start header */
+header
+{
+    background-color: var(--myGradientBlue);
+    position: relative;
+    /*padding: var(--generalPadding);*/
+}
+header nav .container
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header nav .nav_brand{
+    color: var(--myOrange);
+    font-size: 25px ;
+
+}
+header nav ul
+{
+    list-style: none;
+    display: flex;
+}
+header nav ul li
+{
+    padding: 5px 10px;
+    color: white;
+    transition: var(--generalTransitionDuration);
+    cursor: pointer;
+}
+header nav ul li:hover a
+{
+    color: var(--myOrange);
+}
+header nav ul li a{
+    text-decoration: none;
+    color: inherit;
+    transition: var(--generalTransitionDuration);
+}
+header nav .menu_icon
+{
+    color: white;
+    font-size: 20px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+@media (max-width:768px) {
+    header nav ul{
+        position: fixed;
+        z-index: 1000;
+    left: -250px;
+    top: 58px;
+    width: 250px;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    background-color: var(--myGradientBlue);
+    transition: var(--generalTransitionDuration);
+    }
+    header nav ul.active{
+        left: 0;
+    }  
+    header nav ul li{
+        padding-bottom:calc(var(--generalPadding)*2) ;
+    }
+    header nav ul li:hover {
+        padding-left: 20px;
+
+    }
+    header nav .menu_icon{
+        display: flex;
+    }
+}
+header .content .container
+{
+    display: flex;
+    align-items: center;
+}
+header .content .container .content_description
+{
+    margin-right: 15px;
+}
+header .content .container hr
+{
+    width: 20%;
+    color: var(--myOrange);
+    background-color: var(--myOrange);
+    height: 3px;
+    border-width: 0;
+    margin: 15px 0;
+}
+header .content .container button{
+    margin-top: 15px;
+
+}
+header .content .container .image img{
+    max-width: 100%;
+    margin-left: 15px;
+}
+@media (max-width:768px) {
+
+header .content .container .image{
+    display: none;
+}
+header .content .content_description
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+header .content .content_description p{
+    text-align: center;
+}
+}
+/* end header */
