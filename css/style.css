@@ -1,21 +1,110 @@
 /* start general */
-header nav,header .content{
-    padding-top: var(--generalPadding) ;
-    padding-bottom: var(--generalPadding);
+header .content,
+.about,
+.education,
+.skills {
+    padding-top: calc(var(--generalPadding)*2) ;
+    padding-bottom: calc(var(--generalPadding)*2);
 }
-/* end general */
-/* start header */
-header
+header,.skills
 {
     background-color: var(--myGradientBlue);
     position: relative;
-    /*padding: var(--generalPadding);*/
 }
-header nav .container
+header .content .container .image img,
+.about .container  .image img,
+.education .container .image img{
+    max-width: 100%;    
+}
+header .content .container .image img,
+.about .container .description,
+.education .container .image img{
+    margin-left: 15px;
+}
+header nav .container,
+.about .container,
+.education .container,
+.skills .container
 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+header .content .container hr,
+.about hr,
+.education hr
+{
+    width: 20%;
+    color: var(--myOrange);
+    background-color: var(--myOrange);
+    height: 3px;
+    border-width: 0;
+    margin: 15px 0;
+}
+header .content .container .content_description,
+.about .container  .image img,
+.education .container .description
+{
+    margin-right: 15px;
+}
+header .content .container button,
+.about .social_media_icons,
+.education .container .description .education_item:last-child,
+.skills .skills_item h3{
+    margin-top: var(--generalPadding);
+}
+@media (max-width:768px) {
+    header .content .container .image,
+    .about .container .image,
+    .education .container .image{
+        display: none;
+    }
+    header .content .content_description,
+    .about .container .description,
+    .education .container .description,
+    .skills .container
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    header .content .content_description p,
+    .about .container .description p
+    {
+        text-align: center;
+    }
+}
+.about h1,
+.about p,
+.education h1,
+.education p,
+.skills  h3,
+.skills p
+{
+    color: black;
+}
+.about .social_media_icons,
+header nav .social_media_icons{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.about .social_media_icons .icons_item,
+header nav .social_media_icons .icons_item{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border: 2px solid var(--myOrange);
+    transition: var(--generalTransitionDuration);
+}
+/* end general */
+/* start header */
+header nav{
+    padding-top: var(--generalPadding);
+    padding-bottom: var(--generalPadding);
 }
 header nav .nav_brand{
     color: var(--myOrange);
@@ -34,7 +123,7 @@ header nav ul li
     transition: var(--generalTransitionDuration);
     cursor: pointer;
 }
-header nav ul li:hover a
+header nav ul li:hover:not(.social_media_icons) a
 {
     color: var(--myOrange);
 }
@@ -54,18 +143,26 @@ header nav .menu_icon
     height: 30px;
     cursor: pointer;
 }
+header nav .social_media_icons{
+    display: none;
+}
 @media (max-width:768px) {
     header nav ul{
         position: fixed;
         z-index: 1000;
     left: -250px;
-    top: 58px;
+    top: 0;
     width: 250px;
     display: flex;
     height: 100%;
     flex-direction: column;
     background-color: var(--myGradientBlue);
     transition: var(--generalTransitionDuration);
+    padding-top: calc(var(--generalPadding)/2);
+    padding-bottom: calc(var(--generalPadding)/2);
+    }
+    header nav .social_media_icons{
+        display: flex;
     }
     header nav ul.active{
         left: 0;
@@ -73,7 +170,7 @@ header nav .menu_icon
     header nav ul li{
         padding-bottom:calc(var(--generalPadding)*2) ;
     }
-    header nav ul li:hover {
+    header nav ul li:hover:not(.social_media_icons) {
         padding-left: 20px;
 
     }
@@ -86,40 +183,81 @@ header .content .container
     display: flex;
     align-items: center;
 }
-header .content .container .content_description
+header nav .social_media_icons .icons_item{
+    border-color: white;
+}
+header nav .social_media_icons .icons_item:hover{
+    background-color: white;
+}
+header nav .social_media_icons .icons_item:hover i
 {
-    margin-right: 15px;
+    color: var(--myGradientBlue);
 }
-header .content .container hr
-{
-    width: 20%;
-    color: var(--myOrange);
-    background-color: var(--myOrange);
-    height: 3px;
-    border-width: 0;
-    margin: 15px 0;
-}
-header .content .container button{
-    margin-top: 15px;
-
-}
-header .content .container .image img{
-    max-width: 100%;
-    margin-left: 15px;
-}
-@media (max-width:768px) {
-
-header .content .container .image{
-    display: none;
-}
-header .content .content_description
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-header .content .content_description p{
-    text-align: center;
-}
+header nav .social_media_icons .icons_item i{
+    font-size: 20px;
 }
 /* end header */
+/* start about section */
+.about .social_media_icons .icons_item:hover{
+    background-color: var(--myOrange);
+}
+.about .social_media_icons .icons_item:hover i{
+    color: white;
+}
+.about .social_media_icons .icons_item i{
+    font-size: 28px;
+    color: var(--myOrange);
+    transition: var(--generalTransitionDuration);
+}
+/* end about section */
+/* start education section */
+.education .container .description i{
+    font-size: 22px;
+    color: var(--myOrange);
+    margin-right: 15px;
+}
+.education .container .description .education_item{
+    display: flex;
+}
+/* end education section */
+/*start skills section */
+.skills{
+    text-align: center;
+}
+.skills h1{
+    margin-bottom: var(--generalPadding);
+}
+.skills .container .skills_item{
+    background-color: white;
+    border-radius: 10px;
+    padding: calc(var(--generalPadding)*1.5);
+    margin: calc(var(--generalPadding)*2) var(--generalPadding);
+    position: relative;
+     box-shadow: 0 0 10px black;
+     transition: var(--generalTransitionDuration);
+}
+.skills .container .skills_item:hover{
+    transform: translateY(-20px);
+}
+.skills .container .skills_item i{
+    color: var(--myOrange);
+    top: -33px;
+    position: absolute;
+    transform: translateX(-50%);
+    font-size: 73px;
+}
+.skills .container .skills_item .see_projects{
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+}
+.skills .container .skills_item .see_projects a{
+    color: var(--myOrange);
+    text-decoration: none;
+    transition: var(--generalTransitionDuration);
+}
+.skills .container .skills_item .see_projects a:hover{
+    text-decoration: underline;
+}
+/* end skills section */
+
