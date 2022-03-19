@@ -239,8 +239,8 @@ header nav .social_media_icons .icons_item i{
 .skills .container .skills_item:hover{
     transform: translateY(-20px);
 }
-.skills .container .skills_item i{
-    color: var(--myOrange);
+.skills .container .skills_item img{
+    width: 80px;
     top: -33px;
     position: absolute;
     transform: translateX(-50%);
@@ -258,6 +258,10 @@ header nav .social_media_icons .icons_item i{
 }
 .skills .container .skills_item .see_projects a:hover{
     text-decoration: underline;
+}
+#oracle{
+    width: 160px;
+    top: -7px;
 }
 /* end skills section */
 
