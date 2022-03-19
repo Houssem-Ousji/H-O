@@ -2,7 +2,8 @@
 header .content,
 .about,
 .education,
-.skills {
+.skills,
+.projects {
     padding-top: calc(var(--generalPadding)*2) ;
     padding-bottom: calc(var(--generalPadding)*2);
 }
@@ -39,7 +40,7 @@ header .content .container hr,
     background-color: var(--myOrange);
     height: 3px;
     border-width: 0;
-    margin: 15px 0;
+    margin: var(--generalPadding) 0;
 }
 header .content .container .content_description,
 .about .container  .image img,
@@ -79,7 +80,8 @@ header .content .container button,
 .education h1,
 .education p,
 .skills  h3,
-.skills p
+.skills p,
+.projects h1
 {
     color: black;
 }
@@ -99,6 +101,14 @@ header nav .social_media_icons .icons_item{
     display: flex;
     border: 2px solid var(--myOrange);
     transition: var(--generalTransitionDuration);
+}
+.skills,
+.projects h1{
+    text-align: center;
+}
+.skills h1,
+.projects h1{
+    margin-bottom: var(--generalPadding);
 }
 /* end general */
 /* start header */
@@ -221,12 +231,6 @@ header nav .social_media_icons .icons_item i{
 }
 /* end education section */
 /*start skills section */
-.skills{
-    text-align: center;
-}
-.skills h1{
-    margin-bottom: var(--generalPadding);
-}
 .skills .container .skills_item{
     background-color: white;
     border-radius: 10px;
@@ -264,4 +268,25 @@ header nav .social_media_icons .icons_item i{
     top: -7px;
 }
 /* end skills section */
+/* start projects section */
+.projects .container .filters{
+    display: flex;
+    justify-content: end;
+}
+.projects .container .filters .filter_button{
+    padding: 5px 10px;
+    outline: none;
+    width: 100px;
+    background-color: var(--myGradientBlue);
+    border: none;
+    color: white;
+    cursor: pointer;
+    border: 1px solid white;
+}
+.projects .container .filters .filter_button:hover,.projects .container .filters .filter_button[clicked]{
+    background-color: white;
+    color: var(--myGradientBlue);
+    border-color: var(--myGradientBlue);
+    box-shadow: 0 0 2px 0 black;
+}
 
